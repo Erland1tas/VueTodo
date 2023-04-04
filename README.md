@@ -1,14 +1,12 @@
-# toDo App
+# toDo App with Vue using options API
 
-This template should help get you started developing with Vue 3 in Vite.
+## A fully functional EXAMPLE project written in vue.js, SCSS and HTML using pinia for state management.
 
-## Recommended IDE Setup
+This project was built to advance my vue.js knowledge and showcase my logical thinking, because it was written on my own. This app:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+* has input field, if empty, gives a warning message. If data is submitted it updates the list.
+* you can finish your task and move it to other side or delete it, you can reverse the task if you changed your mind.
+* I took one step further and implemented 'favorite' tasks and you can toggle between 'favorite' and all tasks.
 
 ## Project Setup
 
