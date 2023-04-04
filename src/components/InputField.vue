@@ -1,21 +1,37 @@
 <template>
-  <form class="form-field" @submit.prevent="takeValues">
-    <input type="text" v-model="inputData" placeholder="Enter your task.." />
+  <form class="form-field" @submit.prevent="grabValue">
+    <input type="text" v-model="inputData" :placeholder="message" />
     <button class="add-button">Add Task</button>
   </form>
 </template>
 <script>
+import { useTaskStore } from '../store/store.js'
+import { format } from 'date-fns'
 export default {
   data() {
     return {
-      inputData: ''
+      inputData: '',
+      message: 'Enter your task..'
     }
   },
   methods: {
-    takeValues() {
-      console.log(this.inputData)
+    grabValue() {
+      if (!this.inputData) {
+        this.message = 'You forgot to enter the task!'
+        return
+      } else {
+        this.message = 'Enter your task..'
+      }
+      const data = {
+        description: this.inputData,
+        date: format(new Date(), 'dd.MM.yyyy'),
+        id: Math.floor(Math.random() * 1000000)
+      }
+      useTaskStore().newData(data)
+      this.inputData = ''
     }
-  }
+  },
+  computed: {}
 }
 </script>
 
